@@ -92,7 +92,7 @@ def second():
     maintenanceCalories = averageWeightDifference * fatCalories + average
 
     print("At your current level of activity, your metabolism needs", maintenanceCalories, "calories per day to maintain your weight.")
-    print("To lose around 1 pound a week, try to consume", maintenanceCalories - 582, "calories a day, or", maintenanceCalories + 582, "to gain 1 pound a week.")
+    print("To lose around 1 pound a week, try to consume", maintenanceCalories - 583, "calories a day, or", maintenanceCalories + 583, "to gain 1 pound a week.")
     
     rerunCode()
 
