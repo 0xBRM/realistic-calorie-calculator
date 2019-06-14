@@ -37,11 +37,11 @@ def first():
     initialWeightStr = input("What was your starting weight (in lbs)? ")
     finalWeightStr = input("What was your final weight (in lbs)? ")
     timePeriodStr = input("How long did it take you to reach that weight (in days)? ")
-    averageCalorieConsumptionStr = input("Do you know how many calories you had per day, _on average_?")
+    avgCalorieConsumptionStr = input("Do you know how many calories you had per day, _on average_? ")
     initialWeight = float(initialWeightStr)
     finalWeight = float(finalWeightStr)
     timePeriod = int(timePeriodStr)
-    averageCalorieConsumption = int(averageCalorieConsumptionStr)
+    avgCalorieConsumption = int(avgCalorieConsumptionStr)
 
 
     if (initialWeight and finalWeight and timePeriod) < 1:
@@ -52,7 +52,7 @@ def first():
 
     basalMetabolism = deficit + avgCalorieConsumption
     
-    print("Your basal metabolism is around", basalMetabolism, "calories.")
+    print("Your basal metabolism is around", basalMetabolism, "calories.\n")
 
     if weightDifference > 0:
         print("On average, you have been at a", deficit, "daily calorie deficit.\n")
