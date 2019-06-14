@@ -37,9 +37,12 @@ def first():
     initialWeightStr = input("What was your starting weight (in lbs)? ")
     finalWeightStr = input("What was your final weight (in lbs)? ")
     timePeriodStr = input("How long did it take you to reach that weight (in days)? ")
+    averageCalorieConsumptionStr = input("Do you know how many calories you had per day, _on average_?")
     initialWeight = float(initialWeightStr)
     finalWeight = float(finalWeightStr)
     timePeriod = int(timePeriodStr)
+    averageCalorieConsumption = int(averageCalorieConsumptionStr)
+
 
     if (initialWeight and finalWeight and timePeriod) < 1:
         raise ValueError("Values have to be positive nonzero integers.")
@@ -47,13 +50,17 @@ def first():
     weightDifference = (initialWeight - finalWeight) / timePeriod
     deficit = fatCalories * weightDifference # number of calories in one pound of fat times the weightDifference
 
+    basalMetabolism = deficit + avgCalorieConsumption
+    
+    print("Your basal metabolism is around", basalMetabolism, "calories.")
+
     if weightDifference > 0:
-        print("On average, you have been at a", deficit, "daily calorie deficit. To lose around 1 pound a week aim for a deficit of 583 calories.\n")
+        print("On average, you have been at a", deficit, "daily calorie deficit.\n")
     elif weightDifference == 0:
         print("Move on to the next section of this calculator.\n")
         main()
     else:
-        print("On average, you have been at a", -deficit, "daily calorie surplus. To gain around 1 pound a week aim for a surplus of 583.\n")
+        print("On average, you have been at a", -deficit, "daily calorie surplus.\n")
 
     if timePeriod > 31:
         print("You are using a time period longer than 31 days. For an average that more closely resembles the present, use a shorter time period.\n")
@@ -89,8 +96,8 @@ def second():
     else:
         average = sum / dayCount
 
-    averageWeightDifference = (input_startingWeight - input_finalWeight) / dayCount
-    maintenanceCalories = averageWeightDifference * fatCalories + average
+    weightDifference = (input_startingWeight - input_finalWeight) / dayCount
+    maintenanceCalories = weightDifference * fatCalories + average
 
     print("At your current level of activity, your metabolism needs", maintenanceCalories, "calories per day to maintain your weight.")
     print("To lose around 1 pound a week, try to consume", maintenanceCalories - 583, "calories a day, or", maintenanceCalories + 583, "to gain 1 pound a week.")
