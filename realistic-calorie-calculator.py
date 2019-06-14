@@ -52,7 +52,7 @@ def first():
 
     basalMetabolism = deficit + avgCalorieConsumption
     
-    print("Your basal metabolism is around", basalMetabolism, "calories.\n")
+    print("Your basal metabolism is around", basalMetabolism, "calories.")
 
     if weightDifference > 0:
         print("On average, you have been at a", deficit, "daily calorie deficit.\n")
