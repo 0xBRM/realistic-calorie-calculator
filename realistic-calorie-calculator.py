@@ -1,4 +1,5 @@
 import sys
+import decimal
 
 PY2 = sys.version_info[0] == 2
 if PY2:
@@ -36,8 +37,8 @@ def first():
     initialWeightStr = input("What was your starting weight (in lbs)? ")
     finalWeightStr = input("What was your final weight (in lbs)? ")
     timePeriodStr = input("How long did it take you to reach that weight (in days)? ")
-    initialWeight = int(initialWeightStr)
-    finalWeight = int(finalWeightStr)
+    initialWeight = float(initialWeightStr)
+    finalWeight = float(finalWeightStr)
     timePeriod = int(timePeriodStr)
 
     if (initialWeight and finalWeight and timePeriod) < 1:
@@ -64,8 +65,8 @@ def second():
     print("Using a period of time where you logged your calories on a daily basis, enter...")
     input_startingWeightStr = input("an initial weight: ")
     input_finalWeightStr = input("and a \"final\" weight: ")
-    input_startingWeight = int(input_startingWeightStr)
-    input_finalWeight = int(input_finalWeightStr)
+    input_startingWeight = float(input_startingWeightStr)
+    input_finalWeight = float(input_finalWeightStr)
 
     input_caloriepoints = input("Enter how many calories you consumed over that period of time, separated by commas: ")
     calorieList = input_caloriepoints.split(",")
